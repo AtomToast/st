@@ -34,6 +34,7 @@ typedef struct {
 	void (*func)(const Arg *);
 	const Arg arg;
 	uint  release;
+    int  altscrn;  /* 0: don't care,  -1: not alt screen,  1: alt screen */
 } MouseShortcut;
 
 typedef struct {
@@ -447,8 +448,9 @@ mouseaction(XEvent *e, uint release)
 	for (ms = mshortcuts; ms < mshortcuts + LEN(mshortcuts); ms++) {
 		if (ms->release == release &&
 		    ms->button == e->xbutton.button &&
-		    (match(ms->mod, state) ||  /* exact or forced */
-		     match(ms->mod, state & ~forcemousemod))) {
+            (!ms->altscrn || (ms->altscrn == (tisaltscr() ? 1 : -1))) &&
+		    (match(ms->mod, e->xbutton.state) ||  /* exact or forced */
+		     match(ms->mod, e->xbutton.state & ~forcemousemod))) {
 			ms->func(&(ms->arg));
 			return 1;
 		}
