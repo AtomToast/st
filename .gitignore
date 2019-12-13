@@ -1,0 +1,5 @@
+*.o
+*.diff
+*.desktop
+config.h
+st
