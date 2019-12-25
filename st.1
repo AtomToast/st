@@ -142,6 +142,12 @@ Print the full screen to the
 Print the selection to the
 .I iofile.
 .TP
+.B Shift-Page Up
+Scrolls up a page (Alternatively Alt-Shift-b)
+.TP
+.B Shift-Page Down
+Scrolls down a page (Alternatively Alt-Shift-f)
+.TP
 .B Ctrl-Shift-Page Up
 Increase font size.
 .TP
@@ -151,7 +157,7 @@ Decrease font size.
 .B Ctrl-Shift-Home
 Reset to default font size.
 .TP
-.B Ctrl-Shift-y
+.B Ctrl-Shift-p
 Paste from primary selection (middle mouse button).
 .TP
 .B Ctrl-Shift-c
@@ -159,6 +165,27 @@ Copy the selected text to the clipboard selection.
 .TP
 .B Ctrl-Shift-v
 Paste from the clipboard selection.
+.TP
+.B Ctrl-Shift-Return
+Opens a new instance of st in the same directory
+.TP
+.B Alt-Shift-b
+Scrolls up a page (Alternatively Shift-Page Up)
+.TP
+.B Alt-Shift-f
+Scrolls down a page (Alternatively Shift-Page Down)
+.TP
+.B Alt-Shift-y
+Scrolls up one line (Alternatively Mouse Scroll Up)
+.TP
+.B Alt-Shift-e
+Scrolls down one line (Alternatively Mouse Scroll Down)
+.TP
+.B Alt-Shift-u
+Creats a dmenu prompt for opening a visible url (uses xdg-open)
+.TP
+.B Alt-Shift-c
+Creates a dmenu prompt for copying a visible url (uses xclip)
 .SH CUSTOMIZATION
 .B st
 can be customized by creating a custom config.h and (re)compiling the source
