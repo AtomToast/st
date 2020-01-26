@@ -84,33 +84,69 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* Base16 Monokai colors - Wimer Hazenberg (http://www.monokai.nl) */
+static const char base00[] = "#282828"; // "#272822"
+static const char base01[] = "#383830";
+static const char base02[] = "#49483e";
+static const char base03[] = "#75715e";
+static const char base04[] = "#a59f85";
+static const char base05[] = "#f8f8f2";
+static const char base06[] = "#f5f4f1";
+static const char base07[] = "#f9f8f5";
+static const char base08[] = "#f92672";
+static const char base09[] = "#fd971f";
+static const char base0A[] = "#f4bf75";
+static const char base0B[] = "#a6e22e";
+static const char base0C[] = "#a1efe4";
+static const char base0D[] = "#66d9ef";
+static const char base0E[] = "#ae81ff";
+static const char base0F[] = "#cc6633";
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	/* /1* 8 normal colors *1/ */
+	/* "black", */
+	/* "red3", */
+	/* "green3", */
+	/* "yellow3", */
+	/* "blue2", */
+	/* "magenta3", */
+	/* "cyan3", */
+	/* "gray90", */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* /1* 8 bright colors *1/ */
+	/* "gray50", */
+	/* "red", */
+	/* "green", */
+	/* "yellow", */
+	/* "#5c5cff", */
+	/* "magenta", */
+	/* "cyan", */
+	/* "white", */
 
-	[255] = 0,
+	/* [255] = 0, */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	/* /1* more colors can be added after 255 to use with DefaultXX *1/ */
+	/* "#cccccc", */
+	/* "#555555", */
+
+    base00,
+    base08,
+    base0B,
+    base0A,
+    base0D,
+    base0E,
+    base0C,
+    base05,
+
+    base03,
+    base08,
+    base0B,
+    base0A,
+    base0D,
+    base0E,
+    base0C,
+    base07
 };
 
 
@@ -120,8 +156,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultcs = 13; //256;
+static unsigned int defaultrcs = 0; //257;
 
 /*
  * Default shape of cursor
