@@ -256,7 +256,7 @@ static Shortcut shortcuts[] = {
     { TERMMOD2,             XK_E,           kscrolldown,    {.i =  1} },
     { TERMMOD2,             XK_U,           kscrollup,      {.i =  30} },
     { TERMMOD2,             XK_D,           kscrolldown,    {.i =  30} },
-    { TERMMOD2,             XK_U,           externalpipe,   {.v = openurlcmd } },
+    { TERMMOD2,             XK_L,           externalpipe,   {.v = openurlcmd } },
     { TERMMOD2,             XK_C,           externalpipe,   {.v = copyurlcmd } },
 };
 
