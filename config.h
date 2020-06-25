@@ -227,6 +227,14 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
     "sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)' | uniq | sed 's/^www./http:\\/\\/www\\./g' | dmenu -w $(xdotool getactivewindow) -i -p 'Copy which url?' -l 10 | tr -d '\n' | xclip -selection clipboard",
     "externalpipe", NULL };
 
+static const char * buffereditcmd[] = { "/bin/sh", "-c",
+    "tmp=`mktemp`;"
+    "cat > $tmp;"
+    "(devour st -n buffer-edit -e "
+        "$SHELL -c \"nvim +'HardTimeOff' +'norm G$' $tmp\");"
+    "rm $tmp",
+};
+
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
@@ -255,6 +263,7 @@ static Shortcut shortcuts[] = {
     { TERMMOD2,             XK_L,           externalpipe,   {.v = openurlcmd } },
     { TERMMOD2,             XK_C,           externalpipe,   {.v = copyurlcmd } },
     { TERMMOD2,             XK_O,           externalpipe,   {.v = copyoutput } },
+    { TERMMOD2,             XK_N,           externalpipe,   {.v = buffereditcmd } },
 };
 
 /*
