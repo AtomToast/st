@@ -99,7 +99,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Base16 Monokai colors - Wimer Hazenberg (http://www.monokai.nl) */
-static const char base00[] = "#282828"; // "#272822"
+static const char base00[] = "#272822"; // "#282828"
 static const char base01[] = "#e73c50";
 static const char base02[] = "#a6e22e";
 static const char base03[] = "#e6db74";
@@ -231,7 +231,7 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD2 (Mod1Mask|ShiftMask)
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)'| uniq | sed 's/^www./http:\\/\\/www\\./g' | dmenu -w $(xdotool getactivewindow) -i -p 'Follow which url?' -l 10 | xargs -r xdg-open",
+    "sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)'| uniq | sed 's/^www./http:\\/\\/www\\./g' | dmenu -w $(xdotool getactivewindow) -i -p 'Follow which url?' -l 10 | xargs -r linkhandler",
     "externalpipe", NULL };
 
 static char *copyurlcmd[] = { "/bin/sh", "-c",
