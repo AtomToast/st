@@ -242,7 +242,7 @@ static const char * buffereditcmd[] = { "/bin/sh", "-c",
     "tmp=`mktemp`;"
     "cat > $tmp;"
     "(devour st -n buffer-edit -e "
-        "$SHELL -c \"nvim +'HardTimeOff' +'norm G$' $tmp\");"
+        "$SHELL -c \"nvim +'norm G$' $tmp\");"
     "rm $tmp",
 };
 
